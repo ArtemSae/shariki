@@ -20,12 +20,10 @@ class Vragi:
         self.x = rn.randint(0, 800)
         self.y = rn.randint(0, 800)
         self.hitbox = pg.rect.Rect([self.x, self.y], [50, 50])
-        self.speed_x = rn.randint(-10, 10)
-        self.speed_y = rn.randint(-10, 10)
 
     def otrisovka(self, okno):
         pg.draw.ellipse(okno, [0, 255, 0], self.hitbox)
 
     def dvijenie(self):
-        self.x += self.speed_x
-        self.y += self.speed_y
+        self.hitbox.y += 3
+        self.hitbox.x += 3

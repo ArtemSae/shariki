@@ -11,15 +11,15 @@ class Igri:
         self.glavnii_sharik = st.Sharik()
         self.frames = 0
         self.vragii = []
-        self.vragi_counts = 0
         self.fps = pg.time.Clock()
 
     def logika(self):
+        for sharek in self.vragii:
+            sharek.dvijenie()
         self.glavnii_sharik.dvijenie()
         if self.frames % 100 == 0:
             self.vragi = st.Vragi()
             self.vragii.append(self.vragi)
-            self.vragi_counts += 1
 
     def otrisovka(self):
         self.okno.fill([255, 255, 255])
